@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AplicacionConsum</string>
+    <string name="correo">Correo Electronico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="no_estas_registrado">No estás registrado?</string>
+    <string name="repetir_contrasena">Repetir contraseña</string>
+</resources>

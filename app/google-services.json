@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "510858490095",
+    "firebase_url": "https://aplicacionconsum.firebaseio.com",
+    "project_id": "aplicacionconsum",
+    "storage_bucket": "aplicacionconsum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510858490095:android:5f7acd4743924fe8bfab1a",
+        "android_client_info": {
+          "package_name": "com.example.aplicacionconsum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510858490095-dm6nav20bq56dcvfvhnn9epaftdi1mj3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplicacionconsum",
+            "certificate_hash": "28b1a239dde8c9fae71d1164ec5bb0d2fdd6e9e9"
+          }
+        },
+        {
+          "client_id": "510858490095-mqqrrbdk75n81n247scvqqf2ejcbvtii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsIuG4TTn_Ydd4TUw0kwh8JoJl6VY91T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510858490095-mqqrrbdk75n81n247scvqqf2ejcbvtii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
