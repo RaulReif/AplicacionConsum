@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etEmail, etContrasena;
     private Button btnIniciar;
+    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.emailEtLogin);
         etContrasena = findViewById(R.id.contrasenaEtLogin);
         btnIniciar = findViewById(R.id.iniciarBtnLogin);
+        progressBar = findViewById(R.id.progressBarMain);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!etEmail.getText().toString().isEmpty() && !etContrasena.toString().isEmpty())
-                    signIn(etEmail.getText().toString(), etContrasena.toString());
+                    signIn(etEmail.getText().toString(), etContrasena.getText().toString());
                 else
                     Toast.makeText(MainActivity.this, "Introduce los datos", Toast.LENGTH_SHORT).show();
             }
@@ -84,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
     private void signIn(String email, String contrasena){
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, contrasena)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -103,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+        progressBar.setVisibility(View.GONE);
     }
 
     public void clickRegistrarse(View view){
@@ -133,4 +139,5 @@ public class MainActivity extends AppCompatActivity {
 
         builder.create().show();
     }
+
 }

@@ -5,4 +5,6 @@
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="no_estas_registrado">No estás registrado?</string>
     <string name="repetir_contrasena">Repetir contraseña</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="title_activity_productos">ProductosActivity</string>
 </resources>
