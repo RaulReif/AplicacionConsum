@@ -15,6 +15,7 @@ import com.example.aplicacionconsum.R;
 import com.example.aplicacionconsum.models.Producto;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.ProductoHolder>{
@@ -34,7 +35,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.Prod
         Producto p = lista.get(i);
 
         productoHolder.tvNombre.setText(p.getNombre());
-        productoHolder.tvPrecio.setText(String.valueOf(p.getPrecio()));
+        productoHolder.tvPrecio.setText(NumberFormat.getCurrencyInstance().format(p.getPrecio()));
 
         Picasso.get()
                 .load(p.getImagen())

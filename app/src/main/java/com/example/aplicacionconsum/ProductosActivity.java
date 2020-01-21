@@ -3,6 +3,7 @@ package com.example.aplicacionconsum;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,7 +25,6 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class ProductosActivity extends AppCompatActivity {
 
@@ -35,6 +35,7 @@ public class ProductosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productos);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Productos");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             setSupportActionBar(toolbar);
 
@@ -52,18 +53,15 @@ public class ProductosActivity extends AppCompatActivity {
         refProductos.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<Map<String, Producto>> genericTypeIndicator = new GenericTypeIndicator<Map<String, Producto>>(){};
-                ArrayList<Producto> lista = (ArrayList<Producto>) dataSnapshot.getValue(genericTypeIndicator);
-                Map<String, Producto> mapaProductos = (Map<String, Producto>) lista;
-                lista.clear();
-                lista.addAll(mapaProductos.values());
+                GenericTypeIndicator<ArrayList<Producto>> genericTypeIndicator = new GenericTypeIndicator<ArrayList<Producto>>(){};
+                ArrayList<Producto> listaAux = dataSnapshot.getValue(genericTypeIndicator);
+                lista.addAll(listaAux);
                 adapter.notifyDataSetChanged();
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -87,6 +85,8 @@ public class ProductosActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 break;
+            case R.id.miCarroMiMenu:
+                startActivity(new Intent(this, MiCarroActivity.class));
         }
         return true;
     }

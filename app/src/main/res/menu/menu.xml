@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/miCarroMiMenu"
+        android:title="Mi Carro de la Compra" />
+    <item
         android:id="@+id/cerrarSesionMiMenu"
         android:title="@string/cerrar_sesion" />
 </menu>

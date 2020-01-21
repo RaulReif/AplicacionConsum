@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
@@ -32,4 +32,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/view_array_24px"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="27dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
